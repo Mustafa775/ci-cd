@@ -1,5 +1,15 @@
+import { useState } from "react";
+
  
  const job = ({job}: {job: any}) => {
+
+  const [readMore,setReadMore] = useState(false);
+  let description = job.description;
+
+  if (!readMore) {
+    description = job.description.substring(0,88) + "...";
+  }
+  
    return (
     <div className="bg-white rounded-xl shadow-md relative">
     <div className="p-4">
@@ -9,8 +19,12 @@
       </div>
 
       <div className="mb-5">
-        {job.description}
+        { description }
       </div>
+
+      <button onClick={()=>setReadMore((prevState)=> (!prevState))} className="text-indigo-500 mb-5 hover:text-indigo-600">
+        {readMore ? "Less":"More"}
+      </button>
 
       <h3 className="text-indigo-500 mb-2">{job.salary}</h3>
 
