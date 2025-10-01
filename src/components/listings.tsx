@@ -1,8 +1,11 @@
 import jobs from "../jobs.json";
 import Job from "../components/job";
 
-const listings = ({isHome= false} : {isHome: boolean}) => {
-    const jobs = isHome ? jobs.slice(0,3) : jobs; 
+
+// {isHome= false} : {isHome: boolean}
+
+const listings = () => {
+    const job = jobs.slice(0,3) 
   return (
 
     <section className="bg-blue-50 px-4 py-10">
@@ -13,7 +16,7 @@ const listings = ({isHome= false} : {isHome: boolean}) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* <!-- Job Listing 1 --> */}
         {/* Each child in a list should have a unique "key" prop */}
-        {jobs.map( (job) => (
+        {job.map( (job) => (
             <Job key={job.id} job={job} />
         ))}
         

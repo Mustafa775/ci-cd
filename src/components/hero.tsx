@@ -1,5 +1,5 @@
 
-const hero = ({title="Hello Everybody",subtitle="Welcom to your job listings"}: {title?: string, subtitle?: string}) => {
+const hero = ({title="Hello Mustafa 👍🏻👍🏻👍🏻",subtitle="Welcom to your job listings"}: {title?: string, subtitle?: string}) => {
   return (
     <section className="bg-indigo-700 py-20 mb-4">
     <div
